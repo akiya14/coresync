@@ -5,6 +5,10 @@ prototype developed for BF Industries, Inc. It replaces paper-based recording
 with searchable transactions, inventory summaries, transfer verification, and
 management reports.
 
+## Live Demo
+
+[https://coresync-lyart.vercel.app](https://coresync-lyart.vercel.app)
+
 ## Demo Access
 
 - Email: `admin@coresync.ph`

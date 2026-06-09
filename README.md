@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CoreSync
 
-## Getting Started
+CoreSync is a web-based raw material and production output transfer monitoring
+prototype developed for BF Industries, Inc. It replaces paper-based recording
+with searchable transactions, inventory summaries, transfer verification, and
+management reports.
 
-First, run the development server:
+## Demo Access
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Email: `admin@coresync.ph`
+- Password: `coresync123`
+
+The credentials are for demonstration only. Selectable roles are available
+inside the application to demonstrate permission differences.
+
+## Features
+
+- Responsive operations dashboard
+- Per-material inventory balances and low-stock alerts
+- Raw material receiving and usage transactions
+- Output transfer records with document, series, bag, analysis, and tag numbers
+- Create, edit, delete, search, and filter workflows
+- Transfer verification and printable transfer forms
+- Role demonstrations for administrator, inventory, production, and management
+- Audit trail for record changes
+- CSV operational reports
+- Photo, PDF, scanned-form, receipt, and quality-control attachments
+- Built-in sample transactions and scanned transfer forms
+- BF Industries-inspired visual design and accessible motion
+
+## Technology
+
+- Next.js 16
+- React 19
+- TypeScript
+- CSS Modules
+- Vercel deployment
+
+This prototype stores records and uploaded attachments in browser
+`localStorage`, allowing it to run without external services. Production use
+should migrate records to PostgreSQL, authentication to Supabase Auth, and
+attachments to Supabase Storage.
+
+## Run Locally
+
+Install dependencies:
+
+```powershell
+npm.cmd install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Start development mode:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```powershell
+npm.cmd run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+For testing from another device on the same network:
 
-To learn more about Next.js, take a look at the following resources:
+```powershell
+npm.cmd run build
+npm.cmd run serve
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open the computer's local IPv4 address, such as
+`http://192.168.1.47:3000`. Do not open `0.0.0.0`; it is only the server's
+listening address.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Verification
 
-## Deploy on Vercel
+```powershell
+npm.cmd run lint
+npm.cmd run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project is configured for Vercel's standard Next.js deployment. No
+environment variables are needed for the current browser-storage prototype.
+
+## Important Note
+
+CoreSync is an academic prototype. Browser-local data, demo authentication, and
+client-side roles are not suitable security controls for real company records.
+Before production use, add server-side authentication, database authorization,
+backups, and permanent audit storage.
